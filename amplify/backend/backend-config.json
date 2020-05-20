@@ -1,0 +1,26 @@
+{
+    "api": {
+        "topbaraa": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authtopbaraa714f8b2e"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "auth": {
+        "topbaraa714f8b2e": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    }
+}

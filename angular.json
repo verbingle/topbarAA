@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "topbarAA"
+    }
+  },
+  "defaultProject": "topbarAA",
+  "cli": {
+    "analytics": "a5f99d83-fad9-4966-9e82-5dc6d954d311"
+  }
 }

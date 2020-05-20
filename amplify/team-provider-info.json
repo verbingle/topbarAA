@@ -1,0 +1,20 @@
+{
+    "env": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-topbaraa-env-184847-authRole",
+            "UnauthRoleArn": "arn:aws:iam::552300014898:role/amplify-topbaraa-env-184847-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::552300014898:role/amplify-topbaraa-env-184847-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-topbaraa-env-184847-deployment",
+            "UnauthRoleName": "amplify-topbaraa-env-184847-unauthRole",
+            "StackName": "amplify-topbaraa-env-184847",
+            "StackId": "arn:aws:cloudformation:us-east-2:552300014898:stack/amplify-topbaraa-env-184847/4b5eb2b0-9a2b-11ea-a4bd-025084048856",
+            "AmplifyAppId": "d3rj9v53s9tejm"
+        },
+        "categories": {
+            "auth": {
+                "topbaraa714f8b2e": {}
+            }
+        }
+    }
+}

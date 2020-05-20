@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "topbaraa",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authtopbaraa714f8b2e",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
