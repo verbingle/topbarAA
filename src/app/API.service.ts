@@ -105,6 +105,7 @@ export type CreateTodoMutation = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type UpdateTodoMutation = {
@@ -115,6 +116,7 @@ export type UpdateTodoMutation = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type DeleteTodoMutation = {
@@ -125,6 +127,7 @@ export type DeleteTodoMutation = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type SyncTodosQuery = {
@@ -137,6 +140,7 @@ export type SyncTodosQuery = {
     _version: number;
     _deleted: boolean | null;
     _lastChangedAt: number;
+    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -150,6 +154,7 @@ export type GetTodoQuery = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type ListTodosQuery = {
@@ -162,6 +167,7 @@ export type ListTodosQuery = {
     _version: number;
     _deleted: boolean | null;
     _lastChangedAt: number;
+    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -175,6 +181,7 @@ export type OnCreateTodoSubscription = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type OnUpdateTodoSubscription = {
@@ -185,6 +192,7 @@ export type OnUpdateTodoSubscription = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 export type OnDeleteTodoSubscription = {
@@ -195,6 +203,7 @@ export type OnDeleteTodoSubscription = {
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
+  owner: string | null;
 };
 
 @Injectable({
@@ -214,6 +223,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -240,6 +250,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -266,6 +277,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -296,6 +308,7 @@ export class APIService {
             _version
             _deleted
             _lastChangedAt
+            owner
           }
           nextToken
           startedAt
@@ -329,6 +342,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -355,6 +369,7 @@ export class APIService {
             _version
             _deleted
             _lastChangedAt
+            owner
           }
           nextToken
           startedAt
@@ -377,8 +392,8 @@ export class APIService {
   }
   OnCreateTodoListener: Observable<OnCreateTodoSubscription> = API.graphql(
     graphqlOperation(
-      `subscription OnCreateTodo {
-        onCreateTodo {
+      `subscription OnCreateTodo($owner: String!) {
+        onCreateTodo(owner: $owner) {
           __typename
           id
           name
@@ -386,6 +401,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`
     )
@@ -393,8 +409,8 @@ export class APIService {
 
   OnUpdateTodoListener: Observable<OnUpdateTodoSubscription> = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateTodo {
-        onUpdateTodo {
+      `subscription OnUpdateTodo($owner: String!) {
+        onUpdateTodo(owner: $owner) {
           __typename
           id
           name
@@ -402,6 +418,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`
     )
@@ -409,8 +426,8 @@ export class APIService {
 
   OnDeleteTodoListener: Observable<OnDeleteTodoSubscription> = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteTodo {
-        onDeleteTodo {
+      `subscription OnDeleteTodo($owner: String!) {
+        onDeleteTodo(owner: $owner) {
           __typename
           id
           name
@@ -418,6 +435,7 @@ export class APIService {
           _version
           _deleted
           _lastChangedAt
+          owner
         }
       }`
     )

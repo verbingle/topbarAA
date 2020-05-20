@@ -10,6 +10,7 @@ mutation CreateTodo(
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
 mutation UpdateTodo(
@@ -23,6 +24,7 @@ mutation UpdateTodo(
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
 mutation DeleteTodo(
@@ -36,5 +38,6 @@ mutation DeleteTodo(
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }

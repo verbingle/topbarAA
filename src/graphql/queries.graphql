@@ -18,6 +18,7 @@ query SyncTodos(
       _version
       _deleted
       _lastChangedAt
+      owner
     }
     nextToken
     startedAt
@@ -31,6 +32,7 @@ query GetTodo($id: ID!) {
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
 query ListTodos(
@@ -46,6 +48,7 @@ query ListTodos(
       _version
       _deleted
       _lastChangedAt
+      owner
     }
     nextToken
     startedAt

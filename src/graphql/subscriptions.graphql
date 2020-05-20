@@ -1,31 +1,34 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTodo {
-  onCreateTodo {
+subscription OnCreateTodo($owner: String!) {
+  onCreateTodo(owner: $owner) {
     id
     name
     description
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
-subscription OnUpdateTodo {
-  onUpdateTodo {
+subscription OnUpdateTodo($owner: String!) {
+  onUpdateTodo(owner: $owner) {
     id
     name
     description
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
-subscription OnDeleteTodo {
-  onDeleteTodo {
+subscription OnDeleteTodo($owner: String!) {
+  onDeleteTodo(owner: $owner) {
     id
     name
     description
     _version
     _deleted
     _lastChangedAt
+    owner
   }
 }
