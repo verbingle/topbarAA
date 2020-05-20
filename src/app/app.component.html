@@ -1,6 +1,9 @@
 <amplify-authenticator>
     <div>
-      My App
       <amplify-sign-out></amplify-sign-out>
+<button (click)="createTodo()">Add Todo</button>
+<ul>
+  <li *ngFor="let item of todos">{{item.name}} - {{item.description}}</li>
+</ul>
     </div>
   </amplify-authenticator>
